@@ -110,3 +110,6 @@
 [submodule "vim/bundle/vim-projectionist"]
 	path = vim/bundle/vim-projectionist
 	url = git://github.com/tpope/vim-projectionist.git
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = https://github.com/vintrepid/oh-my-zsh
