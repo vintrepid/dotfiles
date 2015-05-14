@@ -1,0 +1,37 @@
+export EDITOR=mvim
+DYLD_LIBRARY_PATH=/usr/local/Cellar/mysql/5.5.15/lib:$DYLD_LIBRARY_PATH
+export ARCHFLAGS='-arch x86_64'
+source cdargs-bash.sh
+alias pf="open -a 'Path Finder' ."
+
+source ~/bin/git-completion.bash
+alias git=hub
+alias gst='git status'
+alias gd='git diff | p4merge'
+alias gc='git commit -v'
+alias gca='git commit -v -a'
+alias gb='git branch -a'
+alias staged='git diff --cached'
+alias unstaged='git diff'
+alias both='git diff HEAD'
+alias st='git st'
+
+alias bi="bundle install --path vendor/bundle --binstubs=.bin"
+alias ru="bundle exec ruby"
+alias ra="bundle exec rake"
+alias rs="bundle exec rspec"
+alias ca="bundle exec cap"
+alias cu="bundle exec cucumber"
+
+alias pr="pry -r ./config/environment"
+
+export PATH="./.bin:$PATH"
+
+PS1='\h:\W$(__git_ps1 "(%s)") \u\$ '
+
+# [[ -s "/Users/vintrepid/.rvm/scripts/rvm" ]] && source "/Users/vintrepid/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+
+function kill_merb {
+  ps aux | grep merb | grep -v grep | awk '{print $2}' | xargs kill -9
+}
+# export PATH=/Applications/Gnuplot.app/Contents/Resources/bin:$PATH:$PATH
