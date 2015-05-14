@@ -54,7 +54,7 @@ source cdargs-bash.sh
 alias pf="open -a 'Path Finder' ."
 
 # source ~/bin/git-completion.bash
-alias git=hub
+#alias git=hub
 
 alias bi="bundle install --path vendor/bundle --binstubs=.bin"
 alias ru="bundle exec ruby"
@@ -79,7 +79,7 @@ PROMPT='
 %~
 ${smiley}  %{$reset_color%}'
 
-RPROMPT='%{$fg[white]%} $(~/bin/git-cwd-info.rb)%{$reset_color%}'
+RPROMPT='%{$fg[white]%} $(~/.bin/git-cwd-info.rb)%{$reset_color%}'
 
 # Show completion on first TAB
 setopt menucomplete
@@ -90,7 +90,7 @@ compinit
 
 eval "$(rbenv init -)"
 
-cd ~/projects/wt/toco
+cd ~/dev/wt/toco
 
 function kill_merb {
   ps aux | grep merb | grep -v grep | awk '{print $2}' | xargs kill -9
