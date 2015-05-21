@@ -1,5 +1,8 @@
-export STRIPE_API_KEY="sk_test_4Tbtp88P1QmLEcufkxsoEnGP"
-export STRIPE_PUBLISHABLE_KEY="pk_test_4TbtJ3uLTIfYEJlLoOTeDvBj"
+export PATH="./.bin:/Users/vince/.bin:$PATH"
+
+eval "$(rbenv init -)"
+
+cd ~/dev/wt/toco
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -39,17 +42,15 @@ plugins=(git bundler)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-#export PATH=/Users/vintrepid/.rvm/gems/ruby-1.8.7-p352/bin:/Users/vintrepid/.rvm/gems/ruby-1.8.7-p352@global/bin:/Users/vintrepid/.rvm/rubies/ruby-1.8.7-p352/bin:/Users/vintrepid/.rvm/bin:./.bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
-
 # icu4c reqd for gitorious dolt
 # export LDFLAGS=-L/usr/local/opt/icu4c/lib
 # export CPPFLAGS=-I/usr/local/opt/icu4c/include
 
 # from ~/.profile
 export EDITOR='subl -w'
-DYLD_LIBRARY_PATH=/usr/local/Cellar/mysql/5.5.15/lib:$DYLD_LIBRARY_PATH
+# DYLD_LIBRARY_PATH=/usr/local/Cellar/mysql/5.5.15/lib:$DYLD_LIBRARY_PATH
 export ARCHFLAGS='-arch x86_64'
+
 source cdargs-bash.sh
 alias pf="open -a 'Path Finder' ."
 
@@ -57,15 +58,14 @@ alias pf="open -a 'Path Finder' ."
 #alias git=hub
 
 alias bi="bundle install --path vendor/bundle --binstubs=.bin"
-alias ru="bundle exec ruby"
-alias ra="bundle exec rake"
-alias rs="bundle exec rspec"
-alias ca="bundle exec cap"
-alias cu="bundle exec cucumber"
+
+alias ru="ruby"
+alias ra="rake"
+alias rs="rspec"
+alias ca="cap"
+alias cu="cucumber"
 
 alias pr="pry -r ./config/environment"
-
-export PATH="./.bin:/Users/vintrepid/bin:/usr/local/sbin:/usr/local/bin:/Users/vintrepid/.cabal/bin:$PATH"
 
 # Colors
 autoload -U colors
@@ -88,9 +88,13 @@ setopt menucomplete
 autoload compinit
 compinit
 
-eval "$(rbenv init -)"
 
-cd ~/dev/wt/toco
+
+
+# export STRIPE_API_KEY="sk_test_4Tbtp88P1QmLEcufkxsoEnGP"
+# export STRIPE_PUBLISHABLE_KEY="pk_test_4TbtJ3uLTIfYEJlLoOTeDvBj"
+
+
 
 function kill_merb {
   ps aux | grep merb | grep -v grep | awk '{print $2}' | xargs kill -9
