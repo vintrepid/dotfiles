@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-DICT = File.new('/Users/vintrepid/bin/long.txt').read.split
+DICT = File.new('/Users/vince/.bin/long.txt').read.split
 
 pw = "2%_#{4.times.inject([]){|arr| arr << DICT.sample}.join('_').capitalize}"
 
