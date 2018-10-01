@@ -2,7 +2,7 @@ export PATH="./.bin:/Users/vince/.bin:$PATH"
 
 eval "$(rbenv init -)"
 
-cd ~/dev/wt/toco
+# cd ~/dev/wt/toco
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh

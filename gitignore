@@ -28,3 +28,8 @@ bundle/install.log
 *.mode2v3
 *.pbxuser
 *.perspectivev3
+
+# bundler config
+/.bundle
+/.bin
+/vendor/bundle

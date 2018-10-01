@@ -1,8 +1,12 @@
 #!/usr/bin/env ruby
 
+require 'securerandom'
+
 DICT = File.new('/Users/vince/.bin/long.txt').read.split
 
-pw = "2%_#{4.times.inject([]){|arr| arr << DICT.sample}.join('_').capitalize}"
+num = (0..9).to_a.sample(random: SecureRandom)
+sym = %w(! @ # $ % ^ & * ( ) +).sample(random: SecureRandom)
+pw = "#{num}#{sym}_#{4.times.inject([]){|arr| arr << DICT.sample(random: SecureRandom)}.join('_').capitalize}"
 
 system "echo #{pw} | pbcopy"
 
