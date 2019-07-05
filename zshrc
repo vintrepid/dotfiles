@@ -1,4 +1,5 @@
 export PATH="./.bin:/Users/vince/.bin:$PATH"
+export DISABLE_AUTO_TITLE=true
 
 eval "$(rbenv init -)"
 
@@ -88,8 +89,10 @@ setopt menucomplete
 autoload compinit
 compinit
 
-
-
+LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
+  . $LUNCHY_DIR/lunchy-completion.zsh
+fi
 
 # export STRIPE_API_KEY="sk_test_4Tbtp88P1QmLEcufkxsoEnGP"
 # export STRIPE_PUBLISHABLE_KEY="pk_test_4TbtJ3uLTIfYEJlLoOTeDvBj"
@@ -108,3 +111,8 @@ function curlsh {
     sh $file;
     rm $file;
 }
+
+
+# source ~/.xsh
+
+# source ~/.bin/tmuxinator.zsh
