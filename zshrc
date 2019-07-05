@@ -1,4 +1,5 @@
 export PATH="./.bin:/Users/vince/.bin:$PATH"
+export DISABLE_AUTO_TITLE=true
 
 eval "$(rbenv init -)"
 
