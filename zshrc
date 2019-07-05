@@ -108,3 +108,8 @@ function curlsh {
     sh $file;
     rm $file;
 }
+
+
+# source ~/.xsh
+
+# source ~/.bin/tmuxinator.zsh
