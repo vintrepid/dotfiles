@@ -6,7 +6,8 @@ DICT = File.new('/Users/vince/.bin/long.txt').read.split
 
 num = (0..9).to_a.sample(random: SecureRandom)
 sym = %w(! @ # $ % ^ & * ( ) +).sample(random: SecureRandom)
-pw = "#{num}#{sym}_#{4.times.inject([]){|arr| arr << DICT.sample(random: SecureRandom)}.join('_').capitalize}"
+words = 4.times.inject([]){|arr| arr << DICT.sample(random: SecureRandom).reverse.capitalize.reverse}
+pw = (words + ["#{sym}#{num}"]).shuffle.join('_')
 
 system "echo #{pw} | pbcopy"
 
